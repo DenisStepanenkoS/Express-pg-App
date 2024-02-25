@@ -1,0 +1,47 @@
+### 200 {}
+
+GET http://localhost:5000/api/customers/4
+
+### 404
+
+GET http://localhost:5000/api/customers/100
+
+### 201 {}
+
+POST http://localhost:5000/api/customers
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Testovych",
+  "email":"mail@mail.com",
+  "tel": "+380123654788"
+}
+
+### 500
+
+POST http://localhost:5000/api/customers
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Testovych",
+  "email":"mail@mail.com",
+  "tel": "+380983456789"
+}
+
+### 422 
+
+POST http://localhost:5000/api/customers
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Testovych",
+  "email":"mail@mail.com",
+  "tel": "+38083789"
+}
+
+### 200
+
+GET http://localhost:5000/api/customers?page=2&results=5
